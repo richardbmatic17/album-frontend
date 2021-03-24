@@ -21,10 +21,13 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
-  Button: {
+  button: {
     position: 'fixed',
     display: 'block',
     'z-index': 1,
+  },
+  logo: {
+    margin: '20px',
   }
 });
 
@@ -40,23 +43,26 @@ export default function Drawer() {
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
+  const list = anchor => (
     <div
-      className={clsx(classes.list, { [classes.fullList]: anchor === 'top' || anchor === 'bottom' })}
-      role="presentation"
+      className={clsx(classes.list)}
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Link href="/"><div>Richard & Joy Album</div></Link>
+      <Link href="/">
+        <div className={clsx(classes.logo)}>
+          <span>Richard & Joy Album</span>
+        </div>
+      </Link>
       <Divider />
       <List>
         {['About', 'portfolio', 'Album'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <Link href={text}>
-              <ListItemText primary={text} />
-            </Link>
-          </ListItem>
+          <Link href={text}>
+            <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+            </ListItem>
+          </Link>
         ))}
       </List>
     </div>
@@ -68,7 +74,7 @@ export default function Drawer() {
         <React.Fragment key={anchor}>
           <Button
             onClick={toggleDrawer(anchor, true)}
-            className={clsx(classes.Button)}
+            className={clsx(classes.button)}
           >
             <Fab color="primary" aria-label="add">
               <MenuIcon />
