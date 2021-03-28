@@ -7,7 +7,7 @@ export default function Copyright() {
 
   return (
     <Container className={classes.footer} maxWidth={false}>
-      Developed by: apollo
+      Developed by: Apollo
     </Container>
   );
 }
