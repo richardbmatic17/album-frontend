@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   Drawer,
+  Footer,
   Parallax,
 } from '../components'
 
@@ -37,6 +38,7 @@ const Home = (props) => {
         parallaxMessage="Boracay Adventure"
         link="/portfolio"
       />
+      <Footer />
     </div>
   )
 }
