@@ -1,38 +1,25 @@
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import InfoIcon from '@material-ui/icons/Info';
 import MenuIcon from '@material-ui/icons/Menu';
-import Link from '@material-ui/core/Link';
-import Fab from '@material-ui/core/Fab';
+import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
+import { DrawerStyles } from '../styles'
+import {
+  Button,
+  Divider,
+  Fab,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  SwipeableDrawer,
+} from '@material-ui/core';
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-  button: {
-    position: 'fixed',
-    display: 'block',
-    'z-index': 1,
-  },
-  logo: {
-    margin: '20px',
-  }
-});
+const listItems = ['About', 'portfolio', 'Album'];
 
 export default function Drawer() {
-  const classes = useStyles();
+  const classes = DrawerStyles();
   const [state, setState] = React.useState({ left: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -43,23 +30,35 @@ export default function Drawer() {
     setState({ ...state, [anchor]: open });
   };
 
+  const getIcon = index => {
+    if (index === 0) {
+      return <InfoIcon color='primary' />
+    }
+    if (index === 1) {
+      return <AccountBoxIcon color='primary' />
+    }
+    if (index === 2) {
+      return <PhotoAlbumIcon color='primary' />
+    }
+  }
+
   const list = anchor => (
     <div
-      className={clsx(classes.list)}
+      className={classes.list}
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <Link href="/">
-        <div className={clsx(classes.logo)}>
+        <div className={classes.logo}>
           <span>Richard & Joy Album</span>
         </div>
       </Link>
       <Divider />
       <List>
-        {['About', 'portfolio', 'Album'].map((text, index) => (
+        {listItems.map((text, index) => (
           <Link href={text}>
             <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{getIcon(index)}</ListItemIcon>
                 <ListItemText primary={text} />
             </ListItem>
           </Link>
@@ -69,12 +68,12 @@ export default function Drawer() {
   );
 
   return (
-    <div>
+    <div className={classes.root}>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button
             onClick={toggleDrawer(anchor, true)}
-            className={clsx(classes.button)}
+            className={classes.button}
           >
             <Fab color="primary" aria-label="add">
               <MenuIcon />
