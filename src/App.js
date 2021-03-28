@@ -1,6 +1,10 @@
-import './App.css';
 import React from "react";
-import { Home, About, Album } from './pages'
+import './App.css';
+import {
+  About,
+  Album,
+  Home,
+} from './pages'
 import {
   BrowserRouter as Router,
   Switch,
