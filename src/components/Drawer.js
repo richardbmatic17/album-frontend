@@ -5,11 +5,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
 import { DrawerStyles } from '../styles'
 import {
-  Button,
+  Container,
   Divider,
   Fab,
   Link,
-  List,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -48,22 +47,20 @@ export default function Drawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Link href="/">
-        <div className={classes.logo}>
-          <span>Richard & Joy Album</span>
-        </div>
-      </Link>
+      <Container className={classes.logo}>
+        <Link href="/">
+            Richard & Joy Album
+        </Link>
+      </Container>
       <Divider />
-      <List>
-        {listItems.map((text, index) => (
-          <Link href={text}>
-            <ListItem button key={text}>
-                <ListItemIcon>{getIcon(index)}</ListItemIcon>
-                <ListItemText primary={text} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
+      {listItems.map((text, index) => (
+        <Link href={text} key={index}>
+          <ListItem key={text}>
+              <ListItemIcon>{getIcon(index)}</ListItemIcon>
+              <ListItemText primary={text} />
+          </ListItem>
+        </Link>
+      ))}
     </div>
   );
 
@@ -71,14 +68,9 @@ export default function Drawer() {
     <div className={classes.root}>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button
-            onClick={toggleDrawer(anchor, true)}
-            className={classes.button}
-          >
-            <Fab color="primary" aria-label="add">
-              <MenuIcon />
-            </Fab>
-          </Button>
+          <Fab color="primary" aria-label="drawer" onClick={toggleDrawer(anchor, true)} >
+            <MenuIcon />
+          </Fab>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
