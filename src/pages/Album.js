@@ -1,9 +1,9 @@
 import React from 'react'
-import Drawer from '../components/Drawer'
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Parallax from '../components/Parallax'
+import { Page } from '../partials'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,13 +56,12 @@ const Album = (props) => {
   const classes = useStyles();
 
   return (
-    <div>
-      <Drawer />
+    <Page>
       <Parallax
         parallaxImage="https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/"
         parallaxMessage="Welcome to Album Lists"
       />
-    <br />
+      <br />
       <div className={classes.root}>
         <GridList cellHeight={200} className={classes.gridList} cols={3}>
           {tileData.map((tile) => (
@@ -72,7 +71,7 @@ const Album = (props) => {
           ))}
         </GridList>
       </div>
-    </div>
+    </Page>
   )
 }
 

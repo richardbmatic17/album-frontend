@@ -1,12 +1,12 @@
 import React from 'react'
-import Drawer from '../components/Drawer'
+import { Page } from '../partials'
 
 const About = () => {
+  
   return (
-    <div>
-      <Drawer />
+    <Page>
       <div>About page</div>
-    </div>
+    </Page>
   )
 }
 
