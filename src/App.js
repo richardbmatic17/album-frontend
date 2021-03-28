@@ -1,15 +1,15 @@
 import React from "react";
 import './App.css';
 import {
-  About,
-  Album,
-  Home,
-} from './pages'
-import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import {
+  About,
+  Album,
+  Home,
+} from './pages'
 
 function App() {
   return (
