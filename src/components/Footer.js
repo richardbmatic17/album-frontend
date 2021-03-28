@@ -6,7 +6,7 @@ export default function Copyright() {
   const classes = FooterStyles();
 
   return (
-    <Container className={classes.footer}>
+    <Container className={classes.footer} maxWidth={false}>
       Developed by: apollo
     </Container>
   );

@@ -6,7 +6,5 @@ export default makeStyles((theme) => ({
     background: 'black',
     color: 'white',
     fontWeight: 'bold',
-    width: '100%',
-    maxWidth: '100%',
   },
 }));
