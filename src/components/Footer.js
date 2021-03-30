@@ -6,8 +6,8 @@ export default function Copyright() {
   const classes = FooterStyles();
 
   return (
-    <Container className={classes.footer} maxWidth={false}>
-      <Container>Developed by: Richard Matic</Container>
+    <Container className={classes.footer} maxWidth={false}> 
+      Developed by: Richard Matic
     </Container>
   );
 }
