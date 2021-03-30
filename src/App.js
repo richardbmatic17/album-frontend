@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import {
   About,
-  Album,
+  Albums,
   Home,
 } from './pages'
 
@@ -19,8 +19,8 @@ function App() {
               <Route path="/about">
                 <About />
               </Route>
-              <Route path="/album">
-                <Album />
+              <Route path="/albums">
+                <Albums />
               </Route>
               <Route path="/">
                 <Home />
