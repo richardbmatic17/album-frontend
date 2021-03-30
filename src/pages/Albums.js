@@ -3,8 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Parallax from '../components/Parallax'
-import { Link } from '@material-ui/core';
 import { Page } from '../partials'
+import InfoIcon from '@material-ui/icons/Info';
+import {
+  Link,
+  Typography,
+  IconButton,
+  GridListTileBar,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,11 +79,20 @@ const Album = (props) => {
       <div className={classes.root}>
         <GridList cellHeight={200} className={classes.gridList} cols={3}>
           {tileData.map((tile) => (
-            <Link href={`/albums/${tile.id}`}>
-              <GridListTile key={tile.img} cols={tile.cols || 1}>
-                  <img src={tile.img} alt={tile.title} />
-              </GridListTile>
-            </Link>
+            <GridListTile key={tile.img} cols={tile.cols || 1}>
+              {/* <Link href={`/albums/${tile.id}`}> */}
+                <img src={tile.img} alt={tile.title} />
+                <GridListTileBar
+                  title={tile.title}
+                  subtitle={<span>by: {tile.author}</span>}
+                  actionIcon={
+                    <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              {/* </Link> */}
+            </GridListTile>
           ))}
         </GridList>
       </div>
