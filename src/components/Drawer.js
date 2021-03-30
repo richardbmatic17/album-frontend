@@ -56,7 +56,6 @@ export default function Drawer() {
       {listItems.map((text, index) => (
         <Link href={`/${text}`} key={index}>
           <ListItem key={text}>
-            {text}
               <ListItemIcon>{getIcon(index)}</ListItemIcon>
               <ListItemText primary={text} />
           </ListItem>
