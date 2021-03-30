@@ -17,18 +17,10 @@ function App() {
     <div className="App">
         <Router>
             <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/albums/:albumId">
-                <Album />
-              </Route>
-              <Route path="/albums">
-                <Albums />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
+              <Route path="/about" component={About} />
+              <Route path="/albums/:albumId" component={Album} />
+              <Route path="/albums" component={Albums} />
+              <Route path="/" component={Home} />
             </Switch>
         </Router>
     </div>
