@@ -15,7 +15,7 @@ import {
   SwipeableDrawer,
 } from '@material-ui/core';
 
-const listItems = ['About', 'portfolio', 'Album'];
+const listItems = ['about', 'portfolio', 'albums'];
 
 export default function Drawer() {
   const classes = DrawerStyles();
@@ -54,8 +54,9 @@ export default function Drawer() {
       </Container>
       <Divider />
       {listItems.map((text, index) => (
-        <Link href={text} key={index}>
+        <Link href={`/${text}`} key={index}>
           <ListItem key={text}>
+            {text}
               <ListItemIcon>{getIcon(index)}</ListItemIcon>
               <ListItemText primary={text} />
           </ListItem>
