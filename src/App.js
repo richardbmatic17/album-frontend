@@ -8,6 +8,7 @@ import {
 import {
   About,
   Albums,
+  Album,
   Home,
 } from './pages'
 
@@ -21,6 +22,9 @@ function App() {
               </Route>
               <Route path="/albums">
                 <Albums />
+              </Route>
+              <Route path="/albums/:albumId">
+                <Album />
               </Route>
               <Route path="/">
                 <Home />

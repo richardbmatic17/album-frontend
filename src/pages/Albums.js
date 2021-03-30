@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Parallax from '../components/Parallax'
+import { Link } from '@material-ui/core';
 import { Page } from '../partials'
 
 const useStyles = makeStyles((theme) => ({
@@ -21,40 +22,47 @@ const useStyles = makeStyles((theme) => ({
 
 const tileData = [
   {
-     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-     title: 'Image',
-     author: 'author',
-     cols: 1,
+    id: 1,
+    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
+    title: 'Image',
+    author: 'author',
+    cols: 1,
   },
   {
-     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-     title: 'Image',
-     author: 'author',
-     cols: 2,
+    id: 2,
+    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
+    title: 'Image',
+    author: 'author',
+    cols: 2,
   },
   {
-     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-     title: 'Image',
-     author: 'author',
-     cols: 2,
+    id: 3,
+    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
+    title: 'Image',
+    author: 'author',
+    cols: 2,
   },
   {
-     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-     title: 'Image',
-     author: 'author',
-     cols: 1,
+    id: 4,
+    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
+    title: 'Image',
+    author: 'author',
+    cols: 1,
   },
   {
-     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-     title: 'Image',
-     author: 'author',
-     cols: 3,
+    id: 5,
+    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
+    title: 'Image',
+    author: 'author',
+    cols: 3,
   },
 ];
 
 const Album = (props) => {
   const classes = useStyles();
-
+      <Link href="/">
+            Richard & Joy Album
+        </Link>
   return (
     <Page>
       <Parallax
@@ -65,9 +73,11 @@ const Album = (props) => {
       <div className={classes.root}>
         <GridList cellHeight={200} className={classes.gridList} cols={3}>
           {tileData.map((tile) => (
-            <GridListTile key={tile.img} cols={tile.cols || 1}>
-              <img src={tile.img} alt={tile.title} />
-            </GridListTile>
+            <Link href={`/albums/${tile.id}`}>
+              <GridListTile key={tile.img} cols={tile.cols || 1}>
+                  <img src={tile.img} alt={tile.title} />
+              </GridListTile>
+            </Link>
           ))}
         </GridList>
       </div>
