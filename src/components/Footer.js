@@ -7,7 +7,7 @@ export default function Copyright() {
 
   return (
     <Container className={classes.footer} maxWidth={false}>
-      Developed by: Apollo
+      <Container>Developed by: Richard Matic</Container>
     </Container>
   );
 }
