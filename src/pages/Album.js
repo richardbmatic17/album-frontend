@@ -4,6 +4,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Parallax from '../components/Parallax'
 import { Page } from '../partials'
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,24 +55,11 @@ const tileData = [
 
 const Album = (props) => {
   const classes = useStyles();
+  let { albumId } = useParams();
 
   return (
     <Page>
-      <Parallax
-        parallaxImage="https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/"
-        parallaxMessage="Welcome to Album Lists 12312321"
-      />
-      <br />
-      <div className={classes.root}>
-        <GridList cellHeight={200} className={classes.gridList} cols={3}>
-          {tileData.map((tile) => (
-            <GridListTile key={tile.img} cols={tile.cols || 1}>
-              <img src={tile.img} alt={tile.title} />
-              asdasdas
-            </GridListTile>
-          ))}
-        </GridList>
-      </div>
+      this is album {albumId}
     </Page>
   )
 }
