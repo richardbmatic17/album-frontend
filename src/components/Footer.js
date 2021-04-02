@@ -5,7 +5,7 @@ import { FooterStyles } from '../styles'
 
 function Copyright() {
   return (
-    <Typography variant="body2" align="center">
+    <Typography align="center">
       {'Copyright © '}
       {new Date().getFullYear()}
       {'.'}
@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <footer className={classes.footer}>
-      <Typography variant="subtitle1" align="center" color="" component="p">
+      <Typography align="center">
         Developed by: Richard Matic
       </Typography>
       <Copyright />
