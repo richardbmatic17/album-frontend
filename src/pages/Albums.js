@@ -1,15 +1,13 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import Parallax from '../components/Parallax'
+import { Parallax } from '../components'
 import { Page } from '../partials'
-import InfoIcon from '@material-ui/icons/Info';
 import {
-  Link,
-  Typography,
-  IconButton,
+  Button,
+  GridList,
+  GridListTile,
   GridListTileBar,
+  Link,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,35 +28,35 @@ const tileData = [
   {
     id: 1,
     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
+    title: 'Boracay Adventure',
     author: 'author',
     cols: 1,
   },
   {
     id: 2,
     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
+    title: 'Sinagtala Adventure',
     author: 'author',
     cols: 2,
   },
   {
     id: 3,
     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
+    title: 'Grand Cafe 1919',
     author: 'author',
     cols: 2,
   },
   {
     id: 4,
     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
+    title: 'fort santiago',
     author: 'author',
     cols: 1,
   },
   {
     id: 5,
     img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
+    title: 'Ramen Kuroda',
     author: 'author',
     cols: 3,
   },
@@ -66,9 +64,7 @@ const tileData = [
 
 const Album = (props) => {
   const classes = useStyles();
-      <Link href="/">
-            Richard & Joy Album
-        </Link>
+  <Link href="/">Richard & Joy Album</Link>
   return (
     <Page>
       <Parallax
@@ -79,19 +75,15 @@ const Album = (props) => {
       <div className={classes.root}>
         <GridList cellHeight={200} className={classes.gridList} cols={3}>
           {tileData.map((tile) => (
-            <GridListTile key={tile.img} cols={tile.cols || 1}>
-              {/* <Link href={`/albums/${tile.id}`}> */}
+            <GridListTile key={tile.id} cols={tile.cols || 1}>
                 <img src={tile.img} alt={tile.title} />
                 <GridListTileBar
-                  title={tile.title}
-                  subtitle={<span>by: {tile.author}</span>}
-                  actionIcon={
-                    <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-                      <InfoIcon />
-                    </IconButton>
+                  title={
+                    <Button href={`/albums/${tile.id}`} color="primary">
+                      {tile.title}
+                    </Button>
                   }
                 />
-              {/* </Link> */}
             </GridListTile>
           ))}
         </GridList>
