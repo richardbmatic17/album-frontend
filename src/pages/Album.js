@@ -1,73 +1,77 @@
-import React from 'react'
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import Parallax from '../components/Parallax'
-import { Page } from '../partials'
-import { useParams } from "react-router-dom";
+import {
+  Drawer,
+  Footer,
+  Parallax,
+} from '../components'
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  Container,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
   },
-  gridList: {
-    width: '900px',
-    height: '600px',
+  card: {
+    height: '50vh',
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  cardMedia: {
+    width: '50%',
+  },
+  cardContent: {
+    width: '50%',
+    padding: '0',
   },
 }));
 
-const data = [
-  {
-    id: 1,
-    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Boom Paness!!!',
-    author: 'Richard Matic',
-    cols: 1,
-  },
-  {
-    id: 2,
-    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
-    author: 'author',
-    cols: 2,
-  },
-  {
-    id: 3,
-    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
-    author: 'author',
-    cols: 2,
-  },
-  {
-    id: 4,
-    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
-    author: 'author',
-    cols: 1,
-  },
-  {
-    id: 5,
-    img: 'https://via.placeholder.com/400.png/09f/fff%20C/O%20https://placeholder.com/',
-    title: 'Image',
-    author: 'author',
-    cols: 3,
-  },
-];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const Album = (props) => {
+export default function Album() {
   const classes = useStyles();
-  let { albumId } = useParams();
-  const pageData = data.filter(item => item.id.toString() === albumId ? item : '');
 
   return (
-    <Page>
-      {JSON.stringify(pageData[0])}
-    </Page>
-  )
+    <React.Fragment>
+      <Drawer />
+      <Parallax
+        parallaxImage="https://source.unsplash.com/random"
+        parallaxMessage="Welcome to Album Lists"
+      />
+      <main>
+        <Container className={classes.cardGrid}>
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card} xs={12} sm={6} md={12}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Heading
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe the content.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
+      <Footer />
+    </React.Fragment>
+  );
 }
-
-export default Album
