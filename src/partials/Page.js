@@ -9,7 +9,6 @@ const _Page = (props) => {
   return (
     <div>
       <Header />
-      <Drawer />
       {props.children}
       <Footer />
     </div>

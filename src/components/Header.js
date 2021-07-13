@@ -27,13 +27,19 @@ export default function Header() {
   return (
     <Box display="flex" p={1} className={classes.root}>
       <Box p={1}>
-        <Link href="#">
-          Album
+        <Link href="/">
+          R&J Album
         </Link>
       </Box>
       <Box p={1}>
-        <Link href="#" className={classes.headerRightLinks}>
+        <Link href="/albums" className={classes.headerRightLinks}>
+          Albums
+        </Link>
+        <Link href="/portfolio" className={classes.headerRightLinks}>
           Blog
+        </Link>
+        <Link href="/about" className={classes.headerRightLinks}>
+          About Us
         </Link>
         <Link href="#" className={classes.headerRightLinks}>
           Contact Us
