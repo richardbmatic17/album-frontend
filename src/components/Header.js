@@ -12,9 +12,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     overflow: 'hidden',
     backgroundColor: 'white',
-    maxWidth: '80%',
+    maxWidth: '1128px',
     margin: '0 auto',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    adding: '8px 0',
   },
   headerRightLinks: {
     margin: '0 5px',
@@ -35,7 +36,7 @@ export default function Header() {
         <Link href="/albums" className={classes.headerRightLinks}>
           Albums
         </Link>
-        <Link href="/portfolio" className={classes.headerRightLinks}>
+        <Link href="/blogs" className={classes.headerRightLinks}>
           Blog
         </Link>
         <Link href="/about" className={classes.headerRightLinks}>
