@@ -10,6 +10,7 @@ import {
   Album,
   Albums,
   Home,
+  NewHome,
 } from './pages'
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
               <Route path="/about" component={About} />
               <Route path="/albums/:albumId" component={Album} />
               <Route path="/albums" component={Albums} />
-              <Route path="/" component={Home} />
+              <Route path="/" component={NewHome} />
             </Switch>
         </Router>
     </div>
