@@ -24,7 +24,13 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    margin: theme.spacing(2),
+    margin: '16px 0',
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  paperProfile: {
+    padding: '0',
+    margin: '16px 0',
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -37,7 +43,7 @@ const Home = (props) => {
     <Page>
       <Grid container spacing={3} className={classes.root}>
         <Grid item md={3} xs={12}>
-          <Paper elevation={3} className={classes.paper}>
+          <Paper elevation={3} className={classes.paperProfile}>
             <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia
@@ -49,7 +55,7 @@ const Home = (props) => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                  Profile section
+                    Profile section
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
