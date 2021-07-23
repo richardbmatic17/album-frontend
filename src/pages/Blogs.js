@@ -116,7 +116,7 @@ const Home = (props) => {
                     title="Contemplative Reptile"
                   />
                   <Typography variant="body2" color="textSecondary" component="p">
-                    This is our first time to Boracay and first time riding a plane.
+                    This is our first time in Boracay and first time riding a plane.
                     The experience is so awesome, we'll definitely try this again.
                   </Typography>
                 </CardContent>
