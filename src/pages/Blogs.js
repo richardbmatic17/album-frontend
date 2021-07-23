@@ -71,17 +71,17 @@ const posts = [
     image: 'https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG'
   },
   {
-    title: 'Boracay Adventure',
+    title: 'Random Post 1',
     description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
     image: 'https://source.unsplash.com/random'
   },
   {
-    title: 'Boracay Adventure',
+    title: 'Random Post 2',
     description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
     image: 'https://source.unsplash.com/random'
   },
   {
-    title: 'Boracay Adventure',
+    title: 'Random Post 3',
     description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
     image: 'https://source.unsplash.com/random'
   },
@@ -132,7 +132,7 @@ const Home = (props) => {
             <Button className={classes.createPostButton} variant="outlined">Create a Post</Button>
           </Paper>
           {posts.map(post => (
-            <Paper elevation={3} className={classes.paper}>
+            <Paper elevation={3} className={classes.paper} key={post.title}>
               <Card className={classes.root}>
                 <CardActionArea>
                   <CardContent>
