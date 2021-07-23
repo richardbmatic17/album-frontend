@@ -27,18 +27,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: '16px 0', 
     textAlign: 'center',
-    color: theme.palette.text.secondary,
   },
   paperProfile: {
     padding: '0',
     margin: '16px 0',
     textAlign: 'center',
-    color: theme.palette.text.secondary,
   },
   avatar: {
-    position: 'absolute',
-    top: '10px',
-    left: '10px',
+    height: '50px',
+    margin: '0 auto',
+    width: '50px',
   }
 }));
 
@@ -52,17 +50,16 @@ const Home = (props) => {
           <Paper elevation={3} className={classes.paperProfile}>
             <Card className={classes.root}>
               <CardActionArea>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"
-                  className={classes.avatar}/>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Profile section
+                  <Avatar
+                      alt="Remy Sharp"
+                      src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"
+                      className={classes.avatar}/>
+                  <Typography variant="h6">
+                    Richard Matic
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                  <Typography variant="body2" color="textSecondary">
+                    Senior Software Engineer at Stratpoint
                   </Typography>
                 </CardContent>
               </CardActionArea>
