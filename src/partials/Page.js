@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  Drawer,
   Footer,
   Header,
 } from '../components'
