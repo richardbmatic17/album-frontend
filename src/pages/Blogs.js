@@ -64,6 +64,29 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const posts = [
+  {
+    title: 'Boracay Adventure',
+    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
+    image: 'https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG'
+  },
+  {
+    title: 'Boracay Adventure',
+    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
+    image: 'https://source.unsplash.com/random'
+  },
+  {
+    title: 'Boracay Adventure',
+    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
+    image: 'https://source.unsplash.com/random'
+  },
+  {
+    title: 'Boracay Adventure',
+    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
+    image: 'https://source.unsplash.com/random'
+  },
+];
+
 const Home = (props) => {
   const classes = useStyles();
 
@@ -108,36 +131,32 @@ const Home = (props) => {
               src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"/>
             <Button className={classes.createPostButton} variant="outlined">Create a Post</Button>
           </Paper>
-          <Paper elevation={3} className={classes.paper}>
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Boracay Adventure
-                  </Typography>
-                  <CardMedia
-                    className={classes.media}
-                    image="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"
-                    title="Contemplative Reptile"
-                  />
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    This is our first time in Boracay and first time riding a plane.
-                    The experience is so awesome, we'll definitely try this again.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions disableSpacing className={classes.cardActions}>
-                <IconButton aria-label="add to favorites"><Favorite /></IconButton>
-                <IconButton aria-label="share"><Share /></IconButton>
-                <IconButton aria-label="Location"><LocationOn /></IconButton>
-              </CardActions>
-            </Card>
-          </Paper>
-          <Paper elevation={3} className={classes.paper}>Post 2</Paper>
-          <Paper elevation={3} className={classes.paper}>Post 3</Paper>
-          <Paper elevation={3} className={classes.paper}>Post 4</Paper>
-          <Paper elevation={3} className={classes.paper}>Post 5</Paper>
-          <Paper elevation={3} className={classes.paper}>Post 6</Paper>
+          {posts.map(post => (
+            <Paper elevation={3} className={classes.paper}>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {post.title}
+                    </Typography>
+                    <CardMedia
+                      className={classes.media}
+                      image={post.image}
+                      title={post.title}
+                    />
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      {post.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions disableSpacing className={classes.cardActions}>
+                  <IconButton aria-label="add to favorites"><Favorite /></IconButton>
+                  <IconButton aria-label="share"><Share /></IconButton>
+                  <IconButton aria-label="Location"><LocationOn /></IconButton>
+                </CardActions>
+              </Card>
+            </Paper>
+          ))}
         </Grid>
         <Grid item md={3} xs={12}>
           <Paper elevation={3} className={classes.paper}>Featured seciont</Paper>
