@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   paper: {
-    padding: theme.spacing(2),
     margin: '16px 0', 
+    padding: theme.spacing(2),
     textAlign: 'center',
   },
   paperProfile: {
@@ -37,6 +37,17 @@ const useStyles = makeStyles((theme) => ({
     height: '50px',
     margin: '0 auto',
     width: '50px',
+  },
+  createPost: {
+    display: 'flex',
+    margin: '16px 0', 
+    padding: theme.spacing(2),
+    textAlign: 'center',
+  },
+  createPostButton: {
+    borderRadius: '20px',
+    marginLeft: '16px',
+    width: '100%',
   }
 }));
 
@@ -78,7 +89,12 @@ const Home = (props) => {
           </Paper>
         </Grid>
         <Grid item md={6} xs={12}>
-          <Paper elevation={3} className={classes.paper}>Share Box</Paper>
+          <Paper elevation={3} className={classes.createPost}>
+            <Avatar
+              alt="Remy Sharp"
+              src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"/>
+            <Button className={classes.createPostButton} variant="outlined">Create a Post</Button>
+          </Paper>
           <Paper elevation={3} className={classes.paper}>Post Section</Paper>
           <Paper elevation={3} className={classes.paper}>Post 1</Paper>
           <Paper elevation={3} className={classes.paper}>Post 2</Paper>
