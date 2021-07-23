@@ -9,7 +9,6 @@ import {
   About,
   Album,
   Albums,
-  Home,
   Blogs,
   NewHome,
 } from './pages'
