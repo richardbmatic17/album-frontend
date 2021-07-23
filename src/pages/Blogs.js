@@ -12,7 +12,12 @@ import {
   Paper,
   Typography,
 } from '@material-ui/core';
-import { Favorite, Share } from '@material-ui/icons';
+import {
+  Favorite,
+  Share,
+  LocationOn,
+} from '@material-ui/icons';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Page } from '../partials'
 
@@ -122,12 +127,9 @@ const Home = (props) => {
                 </CardContent>
               </CardActionArea>
               <CardActions disableSpacing className={classes.cardActions}>
-                <IconButton aria-label="add to favorites">
-                  <Favorite />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <Share />
-                </IconButton>
+                <IconButton aria-label="add to favorites"><Favorite /></IconButton>
+                <IconButton aria-label="share"><Share /></IconButton>
+                <IconButton aria-label="Location"><LocationOn /></IconButton>
               </CardActions>
             </Card>
           </Paper>
