@@ -6,10 +6,13 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
+  CardMedia,
   Grid,
+  IconButton,
   Paper,
-  Typography
+  Typography,
 } from '@material-ui/core';
+import { Favorite, Share } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import { Page } from '../partials'
 
@@ -25,8 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     margin: '16px 0', 
-    padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: 'left',
   },
   paperProfile: {
     padding: '0',
@@ -48,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     marginLeft: '16px',
     width: '100%',
+  },
+  media: {
+    height: '140px'
+  },
+  cardActions: {
+    padding: '0',
   }
 }));
 
@@ -95,8 +103,34 @@ const Home = (props) => {
               src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"/>
             <Button className={classes.createPostButton} variant="outlined">Create a Post</Button>
           </Paper>
-          <Paper elevation={3} className={classes.paper}>Post Section</Paper>
-          <Paper elevation={3} className={classes.paper}>Post 1</Paper>
+          <Paper elevation={3} className={classes.paper}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Boracay Adventure
+                  </Typography>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"
+                    title="Contemplative Reptile"
+                  />
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    This is our first time to Boracay and first time riding a plane.
+                    The experience is so awesome, we'll definitely try this again.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions disableSpacing className={classes.cardActions}>
+                <IconButton aria-label="add to favorites">
+                  <Favorite />
+                </IconButton>
+                <IconButton aria-label="share">
+                  <Share />
+                </IconButton>
+              </CardActions>
+            </Card>
+          </Paper>
           <Paper elevation={3} className={classes.paper}>Post 2</Paper>
           <Paper elevation={3} className={classes.paper}>Post 3</Paper>
           <Paper elevation={3} className={classes.paper}>Post 4</Paper>
