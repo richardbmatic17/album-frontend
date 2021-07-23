@@ -4,10 +4,19 @@ import {
   Footer,
   Header,
 } from '../components'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: 'rgb(240,240,240)',
+  }
+}));
 
 const _Page = (props) => {
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
       <Header />
       {props.children}
       <Footer />
