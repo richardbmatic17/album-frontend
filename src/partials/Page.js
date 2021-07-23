@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: 'rgb(240,240,240)',
+    width: '100%',
   }
 }));
 

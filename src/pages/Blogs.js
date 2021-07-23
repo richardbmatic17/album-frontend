@@ -1,11 +1,11 @@
 import React from 'react'
 import {
+  Avatar,
   Button,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
-  CardMedia,
   Grid,
   Paper,
   Typography
@@ -15,16 +15,17 @@ import { Page } from '../partials'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: 'transparent',
     flexWrap: 'wrap',
-    overflow: 'hidden',
-    backgroundColor: 'white',
-    maxWidth: '1128px',
+    justifyContent: 'space-between',
     margin: '0 auto',
-    justifyContent: 'space-between'
+    maxWidth: '1128px',
+    overflow: 'hidden',
+    width: '100%',
   },
   paper: {
     padding: theme.spacing(2),
-    margin: '16px 0',
+    margin: '16px 0', 
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -34,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  avatar: {
+    position: 'absolute',
+    top: '10px',
+    left: '10px',
+  }
 }));
 
 const Home = (props) => {
@@ -46,13 +52,10 @@ const Home = (props) => {
           <Paper elevation={3} className={classes.paperProfile}>
             <Card className={classes.root}>
               <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"
-                  title="Contemplative Reptile"
-                />
+                <Avatar
+                  alt="Remy Sharp"
+                  src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"
+                  className={classes.avatar}/>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     Profile section
