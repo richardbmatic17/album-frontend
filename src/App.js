@@ -9,6 +9,7 @@ import {
   About,
   Album,
   Albums,
+  Blog,
   Blogs,
   NewHome,
 } from './pages'
@@ -27,6 +28,7 @@ function App() {
 
               {/* Blog Page */}
               <Route path="/blogs" component={Blogs} />
+              <Route path="/blogs/:blogId" component={Blog} />
 
               {/* Home Page */}
               <Route path="/" component={NewHome} />
