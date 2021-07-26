@@ -142,7 +142,7 @@ const Home = (props) => {
           {posts.map(post => (
             <Paper elevation={3} className={classes.paper} key={post.title}>
               <Card className={classes.root}>
-                <Link href={'/blog/' + post.id} className={classes.link}>
+                <Link href={'/blogs/' + post.id} className={classes.link}>
                   <CardActionArea>
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
