@@ -144,7 +144,7 @@ const Blog = (props) => {
           <GridList cellHeight={300} cols={3}>
             {tileData.map((tile) => (
               <GridListTile key={tile.id} cols={tile.cols || 1} xs={100} className={classes.gridList}>
-                  <img src={tile.image} alt={tile.title} />
+                <img src={tile.image} alt={tile.title} />
               </GridListTile>
             ))}
           </GridList> 
