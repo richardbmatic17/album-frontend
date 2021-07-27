@@ -27,8 +27,8 @@ function App() {
               <Route path="/albums" component={Albums} />
 
               {/* Blog Page */}
-              <Route path="/blogs" component={Blogs} />
               <Route path="/blogs/:blogId" component={Blog} />
+              <Route path="/blogs" component={Blogs} />
 
               {/* Home Page */}
               <Route path="/" component={NewHome} />

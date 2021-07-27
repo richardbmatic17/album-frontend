@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   media: {
-    height: '140px'
+    height: '240px'
   },
   cardActions: {
     padding: '0',
