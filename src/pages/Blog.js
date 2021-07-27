@@ -102,12 +102,6 @@ const Blog = (props) => {
     <Page>
       <Grid container spacing={3} className={classes.root}>
         <Grid item md={9} xs={12}>
-          <Paper elevation={3} className={classes.createPost}>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG"/>
-            <Button className={classes.createPostButton} variant="outlined">Create a Post</Button>
-          </Paper>
           {posts.map(post => (
             <Paper elevation={3} className={classes.paper} key={post.title}>
               <Card className={classes.root}>
@@ -138,8 +132,15 @@ const Blog = (props) => {
           ))}
         </Grid>
         <Grid item md={3} xs={12}>
-          <Paper elevation={3} className={classes.paper}>Featured seciont</Paper>
-          <Paper elevation={3} className={classes.paper}>Ads</Paper>
+          <Paper elevation={3} className={classes.createPost}>
+            <Button className={classes.createPostButton} variant="outlined">Update Blog Post</Button>
+          </Paper>
+          <Paper elevation={3} className={classes.paper}>Comment Section</Paper>
+          <Paper elevation={3} className={classes.paper}>
+            <Typography variant="body2" color="textSecondary" component="p">
+              This is our first time in Boracay and first time riding a plane. The experience is so awesome, we'll definitely try this again.
+            </Typography>
+          </Paper>
         </Grid>
       </Grid> 
     </Page>
