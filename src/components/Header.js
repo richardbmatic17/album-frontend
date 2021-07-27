@@ -37,9 +37,9 @@ export default function Header() {
           </Link>
         </Box>
         <Box p={1}>
-          <Link href="/albums" className={classes.headerRightLinks}>
+          {/* <Link href="/albums" className={classes.headerRightLinks}>
             Albums
-          </Link>
+          </Link> */}
           <Link href="/blogs" className={classes.headerRightLinks}>
             Blog
           </Link>
