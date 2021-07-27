@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridList: {
     '& .MuiGridListTile-tile': {
-      borderRadius: '10px'
+      borderRadius: '4px'
     }
   }
 }));
