@@ -69,7 +69,12 @@ const useStyles = makeStyles((theme) => ({
   },
   gridList: {
     '& .MuiGridListTile-tile': {
-      borderRadius: '4px'
+      borderRadius: '4px',
+    }
+  },
+  gridListParent: {
+    '& li': {
+      padding: '8px !important',
     }
   }
 }));
@@ -141,7 +146,7 @@ const Blog = (props) => {
     <Page>
       <Grid container spacing={3} className={classes.root}>
         <Grid item md={9} xs={12}>
-          <GridList cellHeight={300} cols={3}>
+          <GridList cellHeight={300} cols={3} className={classes.gridListParent}>
             {tileData.map((tile) => (
               <GridListTile key={tile.id} cols={tile.cols || 1} xs={100} className={classes.gridList}>
                 <img src={tile.image} alt={tile.title} />
