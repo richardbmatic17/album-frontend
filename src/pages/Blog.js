@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  Avatar,
   Button,
   Card,
   CardActionArea,
@@ -8,10 +7,12 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  GridList,
+  GridListTile,
   IconButton,
+  Link,
   Paper,
   Typography,
-  Link,
 } from '@material-ui/core';
 import {
   Favorite,
@@ -95,6 +96,44 @@ const posts = [
   },
 ];
 
+const tileData = [
+  {
+    id: 1,
+    img: 'https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG',
+    title: 'Boracay Adventure',
+    author: 'author',
+    cols: 1,
+  },
+  {
+    id: 2,
+    img: 'https://source.unsplash.com/random',
+    title: 'Sinagtala Adventure',
+    author: 'author',
+    cols: 2,
+  },
+  {
+    id: 3,
+    img: 'https://source.unsplash.com/random',
+    title: 'Grand Cafe 1919',
+    author: 'author',
+    cols: 2,
+  },
+  {
+    id: 4,
+    img: 'https://source.unsplash.com/random',
+    title: 'fort santiago',
+    author: 'author',
+    cols: 1,
+  },
+  {
+    id: 5,
+    img: 'https://source.unsplash.com/random',
+    title: 'Ramen Kuroda',
+    author: 'author',
+    cols: 3,
+  },
+];
+
 const Blog = (props) => {
   const classes = useStyles();
 
@@ -130,6 +169,13 @@ const Blog = (props) => {
               </Card>
             </Paper>
           ))}
+          <GridList cellHeight={300} className={classes.gridList} cols={3}>
+            {tileData.map((tile) => (
+              <GridListTile key={tile.id} cols={tile.cols || 1} xs={100}>
+                  <img src={tile.img} alt={tile.title} />
+              </GridListTile>
+            ))}
+          </GridList> 
         </Grid>
         <Grid item md={3} xs={12}>
           <Paper elevation={3} className={classes.createPost}>
@@ -142,7 +188,7 @@ const Blog = (props) => {
             </Typography>
           </Paper>
         </Grid>
-      </Grid> 
+      </Grid>
     </Page>
   )
 }
