@@ -95,6 +95,11 @@ const posts = [
   },
 ];
 
+// Part of about page.
+// 1. intro
+// 2. Tapos bakit ka na inspired gumawa ng web natin
+// 3. Tapos I highlight mo din yung nag simbang gabi tayo. Yung mga pictures natin sa church or chapel I highlight mo hehehe
+
 const Home = (props) => {
   const classes = useStyles();
 
