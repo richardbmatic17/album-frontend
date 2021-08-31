@@ -58,7 +58,14 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   media: {
-    height: '240px'
+    height: '240px',
+    margin: '10px',
+    display: 'flex',
+    borderRadius: '4px',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
   },
   cardActions: {
     padding: '0',
