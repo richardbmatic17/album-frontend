@@ -1,14 +1,10 @@
 import React from 'react'
 import {
-  Avatar,
-  Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
   Grid,
-  IconButton,
   Paper,
   Typography,
   Link,
@@ -31,67 +27,46 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '1128px',
     overflow: 'hidden',
     width: '100%',
+    direction: (props) => props.direction
   },
   paper: {
-    margin: '16px 0', 
     textAlign: 'left',
   },
-  paperProfile: {
-    padding: '0',
-    margin: '16px 0',
-    textAlign: 'center',
-  },
-  avatar: {
-    height: '50px',
-    margin: '0 auto',
-    width: '50px',
-  },
-  createPost: {
-    display: 'flex',
-    margin: '16px 0', 
-    padding: theme.spacing(2),
-    textAlign: 'center',
-  },
-  createPostButton: {
-    borderRadius: '20px',
-    marginLeft: '16px',
-    width: '100%',
-  },
   media: {
-    height: '240px',
-  },
-  cardActions: {
-    padding: '0',
+    height: '100%',
   },
   link: {
     textDecoration: 'none !important',
-  }
+  },
+  ltr: {
+    direction: 'ltr',
+  },
+  rtl: {
+    direction: 'rtl',
+  },
 }));
 
 const posts = [
   {
     id: '1',
-    title: 'Boracay Adventure',
-    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
-    image: 'https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG'
+    title: 'Into',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    image: 'https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG',
+    direction: 'ltr',
   },
   {
     id: '2',
-    title: 'Random Post 1',
-    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
-    image: 'https://source.unsplash.com/random'
+    title: 'Inspiration',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    image: 'https://source.unsplash.com/random',
+    direction: 'rtl',
   },
   {
     id: '3',
-    title: 'Random Post 2',
-    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
-    image: 'https://source.unsplash.com/random'
-  },
-  {
-    id: '4',
-    title: 'Random Post 3',
-    description: 'This is our first time in Boracay and first time riding a plane. The experience is so awesome, we\'ll definitely try this again.',
-    image: 'https://source.unsplash.com/random'
+    title: 'Highligh',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    image: 'https://source.unsplash.com/random',
+    direction: 'ltr',
   },
 ];
 
@@ -101,41 +76,33 @@ const posts = [
 // 3. Tapos I highlight mo din yung nag simbang gabi tayo. Yung mga pictures natin sa church or chapel I highlight mo hehehe
 
 const Home = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(props);
 
   return (
     <Page>
         {posts.map(post => (
-          <Grid container spacing={3} className={classes.root}>
+          <Grid container spacing={3} className={`${classes.root} ${classes[post.direction]}`} direction={post.direction}>
             <Grid item md={6} xs={12}>
-              <Typography className={classes.root}>
-                <Link href="#">
-                  <CardMedia
-                    className={classes.media}
-                    image={post.image}
-                    title={post.title}
-                  />
-                </Link>
-              </Typography>
+              <Link href={'/blogs/' + post.id} className={classes.link}>
+                <CardMedia className={classes.media} image={post.image} />
+              </Link>
             </Grid>
             <Grid item md={6} xs={12}>
               <Paper elevation={3} className={classes.paper} key={post.title}>
                 <Card className={classes.root}>
-                  <Link href={'/blogs/' + post.id} className={classes.link}>
-                    <CardActionArea>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {post.title}
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            {post.description}
-                          </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                  </Link>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography variant="h5">
+                        {post.title}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        {post.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
                 </Card>
               </Paper>
-          </Grid>
+            </Grid>
           </Grid> 
         ))}
     </Page>
