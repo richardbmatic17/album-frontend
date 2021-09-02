@@ -90,16 +90,14 @@ const Home = (props) => {
             <Grid item md={6} xs={12}>
               <Paper elevation={3} className={classes.paper} key={post.title}>
                 <Card className={classes.root}>
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography variant="h5">
-                        {post.title}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        {post.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
+                  <CardContent>
+                    <Typography variant="h5">
+                      {post.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {post.description}
+                    </Typography>
+                  </CardContent>
                 </Card>
               </Paper>
             </Grid>
