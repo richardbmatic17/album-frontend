@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Card,
-  CardActionArea,
   CardContent,
   CardMedia,
   Grid,
@@ -9,11 +8,6 @@ import {
   Typography,
   Link,
 } from '@material-ui/core';
-import {
-  Favorite,
-  Share,
-  LocationOn,
-} from '@material-ui/icons';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Page } from '../partials'
@@ -27,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '1128px',
     overflow: 'hidden',
     width: '100%',
-    direction: (props) => props.direction
   },
   paper: {
     textAlign: 'left',
@@ -44,6 +37,20 @@ const useStyles = makeStyles((theme) => ({
   rtl: {
     direction: 'rtl',
   },
+  image: {
+    [theme.breakpoints.up('xs')]: {
+      width: '100%',
+      height: '30vh'
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '100%',
+      height: '40vh'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '100%',
+      height: 'auto'
+    },
+  }
 }));
 
 const posts = [
@@ -82,12 +89,12 @@ const Home = (props) => {
     <Page>
         {posts.map(post => (
           <Grid container spacing={3} className={`${classes.root} ${classes[post.direction]}`} direction={post.direction}>
-            <Grid item md={6} xs={12}>
+            <Grid item md={6} xs={12}  className={classes.image}>
               <Link href={'/blogs/' + post.id} className={classes.link}>
                 <CardMedia className={classes.media} image={post.image} />
               </Link>
             </Grid>
-            <Grid item md={6} xs={12}>
+            <Grid item md={6} xs={12} >
               <Paper elevation={3} className={classes.paper} key={post.title}>
                 <Card className={classes.root}>
                   <CardContent>
