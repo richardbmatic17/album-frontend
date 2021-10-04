@@ -32,8 +32,12 @@ const useStyles = makeStyles((theme) => ({
     "&> div": {
       width: '100%',
       marginBottom: '1rem',
-    }
-  }
+    },
+    "&> button": {
+      color: '#1565C0',
+      borderColor: '#1565C0',
+    },
+  },
 }));
 
 const ContactUs = (props) => {
