@@ -55,7 +55,7 @@ const ContactUs = (props) => {
                       variant="outlined"
                       label="Message"
                       multiline
-                      rows={4}
+                      rows={10}
                     />
                     <Button variant="outlined" size="large">Submit</Button>
                   </Box>
