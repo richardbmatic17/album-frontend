@@ -46,7 +46,7 @@ export default function Header() {
           <Link href="/about" className={classes.headerRightLinks}>
             About Us
           </Link>
-          <Link href="#" className={classes.headerRightLinks}>
+          <Link href="/contact-us" className={classes.headerRightLinks}>
             Contact Us
           </Link>
         </Box>

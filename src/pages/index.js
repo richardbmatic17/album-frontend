@@ -1,10 +1,11 @@
 import About from './About';
 import Album from './Album';
 import Albums from './Albums';
+import Blog from './Blog';
+import Blogs from './Blogs';
+import ContactUs from './ContactUs';
 import Home from './Home';
 import NewHome from './NewHome';
-import Blogs from './Blogs';
-import Blog from './Blog';
 
 export {
   About,
@@ -12,6 +13,7 @@ export {
   Albums,
   Blog,
   Blogs,
+  ContactUs,
   Home,
   NewHome,
 };

@@ -11,6 +11,7 @@ import {
   Albums,
   Blog,
   Blogs,
+  ContactUs,
   NewHome,
 } from './pages'
 
@@ -21,6 +22,9 @@ function App() {
             <Switch>
               {/* About Page */}
               <Route path="/about" component={About} />
+
+              {/* Contact Us Page */}
+              <Route path="/contact-us" component={ContactUs} />
               
               {/* Album Page */}
               <Route path="/albums/:albumId" component={Album} />
