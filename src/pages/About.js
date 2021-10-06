@@ -57,16 +57,22 @@ const posts = [
   {
     id: '1',
     title: 'Inspirations in making this website',
-    description: "There are two things that Inspires me to make this website."
-    + "My First is the Photo Album that given to me by my girlfriend."
-    + "I want to create an Album but in digital form. So we can upload/save all our Photos and videos."
-    + "So we can capture our happy moment, sad moment, food trip and travel."
-    + "And in the future we can show this Digital Album to our future children."
-    + "And also we can upload here the Photos and videos of our family."
-    + "My Second Inspiration in making this website is to improve my programming skills specially in frontend."
-    + "Since while making this website my current job as a software engineer is dedicated only in backend side."
-    + "I also planning to use this website as my guinea pig to explore and practice new technology both frontend,"
-    + "backend and other things that are related to software engineering.",
+    description: <div>
+      <p>There are two things that Inspires me to make this website.</p>
+      <p>
+        My First is the Photo Album that given to me by my girlfriend.
+        I want to create an Album but in digital form. So we can upload/save all our Photos and videos.
+        So we can capture our happy moment, sad moment, food trip and travel.
+        And in the future we can show this Digital Album to our future children.
+        And also we can upload here the Photos and videos of our family.
+      </p>
+      <p>
+        My Second Inspiration in making this website is to improve my programming skills specially in frontend.
+        Since while making this website my current job as a software engineer is dedicated only in backend side.
+        I also planning to use this website as my `guinea pig` to explore and practice new technology both frontend,
+        backend and other things that are related to software engineering.
+      </p>
+    </div>,
     image: 'https://album-2021-03-02.s3-ap-southeast-1.amazonaws.com/boracay/IMG_0623.JPEG',
     direction: 'ltr',
   },
